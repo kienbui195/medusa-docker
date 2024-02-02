@@ -1,0 +1,18 @@
+# File: .gitpod.yml
+
+# Cài đặt PostgreSQL client
+tasks:
+  - name: Install PostgreSQL Client
+    command: sudo apt-get install -y postgresql-client
+
+# Cài đặt và khởi động PostgreSQL server
+
+  - name: Setup PostgreSQL
+    command: |
+      sudo apt-get install -y postgresql
+      sudo service postgresql start
+
+# Mở cổng PostgreSQL
+ports:
+  - port: 5432
+    onOpen: ignore
